@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Raiz del fichero -->
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+		 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" 
+		 id="WebApp_ID" version="4.0">
+	
+	<!-- Nombre de la app (informativo) -->
+	<display-name>JavaSpringNuevoRegistro</display-name>
+
+	<!-- Pagina a mostrar cuando el usuario entra a la raiz de la app sin especificar url -->
+	<welcome-file-list>
+		<welcome-file>InicioSesion.jsp</welcome-file>
+	</welcome-file-list>
+
+	<!-- Evita conflictos con Spring cuando tienes AppInitializer. -->
+	<absolute-ordering />
+	
+	<!-- Registro del DispatcherServlet -->
+	<servlet>
+		<!-- El nombre que le damos, debe coincidir con servlet-mapping -->
+		<servlet-name>dispatcher</servlet-name>
+		<!-- La clase de Spring que hace de DispatcherServlet -->
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<!-- Ruta del fichero de configuracion de Spring -->
+			<param-name>contextConfigLocation</param-name>
+			<param-value>/WEB-INF/spring-mvc-servlet.xml</param-value>
+		</init-param>
+		<!-- Tomcat arranca el DispatcherServlet al iniciar -->
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<!-- Le dice a Tomcat que todas las peticiones (/) vayan al DispatcherServlet. -->
+	<servlet-mapping>
+		<servlet-name>dispatcher</servlet-name>
+		<!-- Captura todas las peticiones -->
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Le dice a Tomcat que los ficheros CSS (/css/*) los sirva el servlet default de Tomcat, no el DispatcherServlet -->
+	<servlet-mapping>
+		<servlet-name>default</servlet-name>
+		<url-pattern>/css/*</url-pattern>
+	</servlet-mapping>
+	
+</web-app>

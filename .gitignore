@@ -1,0 +1,9 @@
+target/
+*.class
+.classpath
+.project
+.settings/
+bin/
+*.war
+*.ear
+*.log

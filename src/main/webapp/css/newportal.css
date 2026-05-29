@@ -1,0 +1,74 @@
+/* Fondo rosa/salmón de la página */
+body {
+    background-color: #fca5a5 !important;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Barra superior marrón oscuro */
+.header-sistema {
+    background-color: #701a1a;
+    color: white;
+    padding: 12px;
+    text-align: center;
+}
+
+/* Centrado del contenido */
+.main-wrapper {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.subtitulo {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* El cuadro con borde que envuelve el formulario */
+.cuadro-registro {
+    display: inline-block;
+    border: 2px solid #450a0a;
+    padding: 30px;
+    text-align: left;
+}
+
+/* Espaciado de cada fila */
+.campo-grupo {
+    margin-bottom: 12px;
+}
+
+.campo-grupo label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 3px;
+}
+
+/* Clase para que los inputs sean cortos y no ocupen el 100% */
+.input-corto {
+    width: 250px !important;
+    padding: 5px;
+    border: 1px solid #ccc;
+    display: block;
+}
+
+/* Alineación de teléfono y botón */
+.fila-final {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.fila-final .input-corto {
+    margin-bottom: 0;
+}
+
+/* Botón turquesa */
+.btn-guardar {
+    background-color: #14b8a6;
+    color: white;
+    border: none;
+    padding: 7px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
